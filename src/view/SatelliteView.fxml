@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="root" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="controller.ViewController">
+   <children>
+      <SplitPane fx:id="splitPane" dividerPositions="0.5" orientation="VERTICAL" prefHeight="600.0" prefWidth="600.0">
+        <items>
+          <AnchorPane maxHeight="500.0" minHeight="425.0" minWidth="0.0" prefHeight="425.0" prefWidth="598.0">
+               <children>
+                  <Canvas height="425.0" width="600.0" />
+                  <ImageView fx:id="marsSurface" fitHeight="600.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/mars.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rover" fitHeight="44.0" fitWidth="36.0" layoutX="281.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/spaceship.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxHeight="170.0" minHeight="170.0" minWidth="160.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button id="turnLeftButton" fx:id="turnLeftButton" layoutX="249.0" layoutY="51.0" mnemonicParsing="false" text="L" />
+                  <Button id="turnRightButton" fx:id="turnRightButton" layoutX="320.0" layoutY="50.0" mnemonicParsing="false" text="R" />
+                  <Button id="forwardButton" fx:id="forwardButton" layoutX="286.0" layoutY="21.0" mnemonicParsing="false" text="F" />
+                  <TextField id="commandsInputText" fx:id="commandsInputText" layoutX="412.0" layoutY="21.0" />
+                  <Button id="execCommandsButton" fx:id="execCommandsButton" layoutX="412.0" layoutY="55.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Execute commands" />
+                  <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Robot coordinates:" />
+                  <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Robot direction:" />
+                  <Text fx:id="positionOnScreen" layoutX="128.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="( 0 , 0 )" />
+                  <Text fx:id="directionOnScreen" layoutX="137.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="90°" />
+                  <Text fx:id="signalInfo" layoutX="21.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="248.0078046321869" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
